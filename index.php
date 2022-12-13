@@ -1,6 +1,10 @@
 <?php
 include_once __DIR__ . '/Models/Product.php';
 include_once __DIR__ . '/Models/Food.php';
+include_once __DIR__ . '/Models/Game.php';
+include_once __DIR__ . '/Models/Kennel.php';
+
+
 
 
 $categoryDog = new Category('cane');
@@ -14,6 +18,13 @@ var_dump($product);
 
 $foodDog = new Food('Scatoletta', 'dog.jpg', 2.80, $categoryDog, 200, ['manzo', 'carote', 'patate'], '20/12/2023');
 var_dump($foodDog);
+
+$gameDog = new Game('Pallina', 'pallina.jpg', 5.50, $categoryDog, '2x5.2cm', ['rubber']);
+var_dump($gameDog);
+
+$kennelDog = new Kennel('Materassino', 'materassino.jpg', 19.99, $categoryDog, '90x63x18cm', ['polyester', 'faux fur']);
+var_dump($kennelDog);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
