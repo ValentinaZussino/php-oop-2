@@ -1,0 +1,16 @@
+img {
+    max-width: 100%;
+}
+
+.vz_icon_dog {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+}
+.vz_icon_cat {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 35px;
+}
