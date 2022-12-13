@@ -1,5 +1,7 @@
 <?php
 include_once __DIR__ . '/Models/Product.php';
+include_once __DIR__ . '/Models/Food.php';
+
 
 $categoryDog = new Category('cane');
 $categoryCat = new Category('gatto');
@@ -9,6 +11,9 @@ var_dump($categoryCat);
 
 $product = new Product('Scatoletta', 'dog.jpg', 2.80, $categoryDog);
 var_dump($product);
+
+$foodDog = new Food('Scatoletta', 'dog.jpg', 2.80, $categoryDog, 200, ['manzo', 'carote', 'patate'], '20/12/2023');
+var_dump($foodDog);
 ?>
 <!DOCTYPE html>
 <html lang="en">
