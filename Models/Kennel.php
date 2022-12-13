@@ -16,8 +16,11 @@ class Kennel extends Product{
     } 
     public function setSize($size)
     {
-        $this->size = $size;
-
+        if(strlen($size)){
+            $this->size = $size;
+        }else{
+            $this->size = 'none';
+        }
         return $this;
     }
     public function getMaterial()
@@ -26,8 +29,11 @@ class Kennel extends Product{
     }
     public function setMaterial($material)
     {
-        $this->material = $material;
-
+        if(count($material)){
+            $this->material = $material;
+        }else{
+            $this->material = ['Unknown'];
+        }
         return $this;
     }
 }
