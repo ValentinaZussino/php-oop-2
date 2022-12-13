@@ -9,23 +9,23 @@ include_once __DIR__ . '/Models/Kennel.php';
 
 
 
-$categoryDog = new Category('cane');
-$categoryCat = new Category('gatto');
+$categoryDog = new Category('cane', 'dog.png');
+$categoryCat = new Category('gatto', 'cat.jpg');
 
-var_dump($categoryDog);
-var_dump($categoryCat);
+// var_dump($categoryDog);
+// var_dump($categoryCat);
 
-$product = new Product('Scatoletta', 'dog.jpg', 2.80, $categoryDog);
-var_dump($product);
+$product = new Product('Scatoletta', 'dog.jpg', 2.85, $categoryDog);
+// var_dump($product);
 
-$foodDog = new Food('Scatoletta', 'dog.jpg', 2.80, $categoryDog, 200, ['manzo', 'carote', 'patate'], '2023/12/20');
-var_dump($foodDog);
+$foodDog = new Food('Scatoletta', 'scatoletta.jpg', 2.85, $categoryDog, 200, ['manzo', 'carote', 'patate'], '2023/12/20');
+// var_dump($foodDog);
 
 $gameDog = new Game('Pallina', 'pallina.jpg', 5.50, $categoryDog, '2x5.2cm', ['rubber']);
-var_dump($gameDog);
+// var_dump($gameDog);
 
 $kennelDog = new Kennel('Materassino', 'materassino.jpg', 19.99, $categoryDog, '90x63x18cm', ['polyester', 'faux fur']);
-var_dump($kennelDog);
+// var_dump($kennelDog);
 
 ?>
 <!DOCTYPE html>
@@ -41,6 +41,45 @@ var_dump($kennelDog);
     <title>Shop</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <div><?php echo $foodDog->getTitle() ?></div>
+                <div><img src="./img/<?php echo $foodDog->category->getIcon() ?>" alt=""></div>
+                <div><img src="./img/<?php echo $foodDog->getImage() ?>" alt=""></div>
+                <div><?php echo $foodDog->getPrice() . ' Euro' ?></div>
+                <div><?php echo $foodDog->getExpirationDate() ?></div>
+                <div><?php foreach($foodDog->getIngredients() as $ingredient) echo $ingredient . ' ' ?></div>
+                <div><?php echo $foodDog->getWeight() . ' gr' ?></div>
+            </div>
+            <div class="col-3">
+                <div><?php echo $foodDog->getTitle() ?></div>
+                <div><img src="./img/<?php echo $foodDog->category->getIcon() ?>" alt=""></div>
+                <div><img src="./img/<?php echo $foodDog->getImage() ?>" alt=""></div>
+                <div><?php echo $foodDog->getPrice() . ' Euro' ?></div>
+                <div><?php echo $foodDog->getExpirationDate() ?></div>
+                <div><?php foreach($foodDog->getIngredients() as $ingredient) echo $ingredient . ' ' ?></div>
+                <div><?php echo $foodDog->getWeight() . ' gr' ?></div>
+            </div>
+            <div class="col-3">
+                <div><?php echo $foodDog->getTitle() ?></div>
+                <div><img src="./img/<?php echo $foodDog->category->getIcon() ?>" alt=""></div>
+                <div><img src="./img/<?php echo $foodDog->getImage() ?>" alt=""></div>
+                <div><?php echo $foodDog->getPrice() . ' Euro' ?></div>
+                <div><?php echo $foodDog->getExpirationDate() ?></div>
+                <div><?php foreach($foodDog->getIngredients() as $ingredient) echo $ingredient . ' ' ?></div>
+                <div><?php echo $foodDog->getWeight() . ' gr' ?></div>
+            </div>
+            <div class="col-3">
+                <div><?php echo $foodDog->getTitle() ?></div>
+                <div><img src="./img/<?php echo $foodDog->category->getIcon() ?>" alt=""></div>
+                <div><img src="./img/<?php echo $foodDog->getImage() ?>" alt=""></div>
+                <div><?php echo $foodDog->getPrice() . ' Euro' ?></div>
+                <div><?php echo $foodDog->getExpirationDate() ?></div>
+                <div><?php foreach($foodDog->getIngredients() as $ingredient) echo $ingredient . ' ' ?></div>
+                <div><?php echo $foodDog->getWeight() . ' gr' ?></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
