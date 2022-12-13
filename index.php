@@ -10,23 +10,16 @@ include_once __DIR__ . '/Models/Kennel.php';
 $categoryDog = new Category('cane', 'icondog.png');
 $categoryCat = new Category('gatto', 'cat.png');
 
-// var_dump($categoryDog);
-// var_dump($categoryCat);
-
-$product = new Product('Scatoletta', 'dog.jpg', 2.85, $categoryDog);
-// var_dump($product);
+// $product = new Product('Scatoletta', 'dog.jpg', 2.85, $categoryDog);
 
 $foodDog = new Food('Scatoletta Pedigree', 'scatoletta.jpg', 2.85, $categoryDog, 200, ['manzo', 'carote', 'patate'], '2023/12/20');
-// var_dump($foodDog);
 $foodCat = new Food('Natural Trainer Secco', 'catfood.jpg', 2.99, $categoryCat, 300, ['anatra', 'ananas', 'mirtillo'], '2025/8/20');
 
 $gameDog = new Game('Pallina', 'ball.jpg', 5.50, $categoryDog, '2x5.2', ['gomma']);
-// var_dump($gameDog);
 $gameDog2 = new Game('Gioco strategico', 'doggame2.jpg', 5.92, $categoryDog, '29', ['plastica']);
 $gameCat = new Game('Tiragraffi con pallina a circuito', 'catgame.jpg', 14.90, $categoryCat, '7,5 x 23,5', ['plastica', 'cartone', 'gomma']);
 
 $kennelDog = new Kennel('Cuccia morbida', 'cuccia-04.jpg', 19.99, $categoryDog, '90x63x18', ['poliestere', 'eco-pelliccia']);
-// var_dump($kennelDog);
 $kennelCat = new Kennel('Cuccia morbida', 'bed.jpg', 23, $categoryCat, '100x65x20', ['poliestere']);
 
 ?>

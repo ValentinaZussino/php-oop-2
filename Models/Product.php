@@ -37,7 +37,7 @@ include_once __DIR__ . '/Category.php';
         if(strlen($image)){
             $this->image = $image;
         }else {
-            $this->image = 'default.jpg';
+            $this->image = 'default-product-img.webp';
         }
         return $this;
     }

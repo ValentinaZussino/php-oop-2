@@ -1,7 +1,10 @@
 img {
     max-width: 100%;
 }
-
+h1{
+    font-size:50px;
+    font-weight: bold;
+}
 .vz_icon_dog {
     position: absolute;
     top: 0;
