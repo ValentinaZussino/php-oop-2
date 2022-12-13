@@ -2,11 +2,11 @@
 include_once __DIR__ . '/Product.php';
 
 class Food extends Product{
-    private int $weight;
+    private mixed $weight;
     private array $ingredients;
     private string $expirationDate;
 
-    function __construct(string $_title, string $_image, float $_price, Category $_category, int $_weight, array $_ingredients, string $_expirationDate){
+    function __construct(string $_title, string $_image, float $_price, Category $_category, mixed $_weight, array $_ingredients, string $_expirationDate = 'yyyy-mm-dd'){
         parent::__construct($_title, $_image, $_price, $_category);
         $this->setWeight($_weight);
         $this->setExpirationDate($_expirationDate);
@@ -18,8 +18,11 @@ class Food extends Product{
     }
     public function setWeight($weight)
     {
-        $this->weight = $weight;
-
+        if($weight > 0){
+            $this->weight = $weight;
+        }else{
+            $this->weight = null;
+        }
         return $this;
     }
     public function getExpirationDate()
@@ -28,8 +31,13 @@ class Food extends Product{
     }
     public function setExpirationDate($expirationDate)
     {
-        $this->expirationDate = $expirationDate;
-
+        $dateNow = new DateTime("now");
+        $dateEx = new DateTime($expirationDate);
+        if($dateNow < $dateEx){
+            $this->expirationDate = $expirationDate;
+        }else{
+            $this->expirationDate = 'Expired';
+        }
         return $this;
     }
     public function getIngredients()
@@ -38,8 +46,11 @@ class Food extends Product{
     }
     public function setIngredients($ingredients)
     {
-        $this->ingredients = $ingredients;
-
+        if(count($ingredients)){
+            $this->ingredients = $ingredients;
+        }else{
+            $this->ingredients = ["Unknown"];
+        }
         return $this;
     }
 }

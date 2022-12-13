@@ -5,12 +5,14 @@ include_once __DIR__ . '/Category.php';
     protected string $image;
     protected float $price;
     public Category $category;
+    private bool $available;
 
-    function __construct(string $_title, string $_image, float $_price, Category $_category){
+    function __construct(string $_title, string $_image = null, float $_price, Category $_category){
         $this->setTitle($_title);
         $this->setImage($_image);
         $this->setPrice($_price);
         $this->category = $_category;
+        $this->setAvailable();
     }
 
     public function getTitle()
@@ -18,8 +20,12 @@ include_once __DIR__ . '/Category.php';
         return $this->title;
     }
     public function setTitle($title)
-    {
-        $this->title = $title;
+    { 
+        if(strlen($title)){
+            $this->title = $title;
+        }else {
+            $this->title = null;
+        }
         return $this;
     }
     public function getImage()
@@ -28,8 +34,11 @@ include_once __DIR__ . '/Category.php';
     }
     public function setImage($image)
     {
-        $this->image = $image;
-
+        if(strlen($image)){
+            $this->image = $image;
+        }else {
+            $this->image = 'default.jpg';
+        }
         return $this;
     }
     public function getPrice()
@@ -38,7 +47,24 @@ include_once __DIR__ . '/Category.php';
     } 
     public function setPrice($price)
     {
-        $this->price = $price;
+        if($price > 0){
+            $this->price = $price;
+        }else {
+            $this->price = 0;
+        }
+        return $this;
+    }
+    public function getAvailable()
+    {
+        return $this->available;
+    }
+    private function setAvailable()
+    {
+        if($this->price == 0){
+            $this->available = false;
+        }else {
+            $this->available = true;
+        }
 
         return $this;
     }

@@ -1,3 +1,5 @@
+<!-- fatto con l'aiuto di Leonardo, Lorenzo, Fabio -->
+
 <?php
 include_once __DIR__ . '/Models/Product.php';
 include_once __DIR__ . '/Models/Food.php';
@@ -16,7 +18,7 @@ var_dump($categoryCat);
 $product = new Product('Scatoletta', 'dog.jpg', 2.80, $categoryDog);
 var_dump($product);
 
-$foodDog = new Food('Scatoletta', 'dog.jpg', 2.80, $categoryDog, 200, ['manzo', 'carote', 'patate'], '20/12/2023');
+$foodDog = new Food('Scatoletta', 'dog.jpg', 2.80, $categoryDog, 200, ['manzo', 'carote', 'patate'], '2023/12/20');
 var_dump($foodDog);
 
 $gameDog = new Game('Pallina', 'pallina.jpg', 5.50, $categoryDog, '2x5.2cm', ['rubber']);
