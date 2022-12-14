@@ -13,7 +13,7 @@ $categoryCat = new Category('gatto', 'cat.png');
 // $product = new Product('Scatoletta', 'dog.jpg', 2.85, $categoryDog);
 
 $foodDog = new Food('Scatoletta Pedigree', 'scatoletta.jpg', 2.85, $categoryDog, ['manzo', 'carote', 'patate'], '2023/12/20');
-$foodDog->setWeight(200, ' gr');
+// $foodDog->setWeight(200, ' gr');
 $foodCat = new Food('Natural Trainer Secco', 'catfood.jpg', 2.99, $categoryCat, ['anatra', 'ananas', 'mirtillo'], '2025/8/20');
 $foodCat->setWeight(300, ' gr');
 
@@ -46,7 +46,11 @@ $kennelCat = new Kennel('Cuccia morbida', 'bed.jpg', 23, $categoryCat, '100x65x2
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $foodDog->getTitle() ?></h5>
                     <p class="card-text"><?php echo "<span>Ingredienti: </span>"; foreach($foodDog->getIngredients() as $ingredient) echo $ingredient . ' ' ?></p>
-                    <p class="card-text"><?php echo "<span>Peso: </span>"; echo $foodDog->getWeight() ?></p>
+                    <p class="card-text"><?php echo "<span>Peso: </span>"; try {
+                            echo $foodDog->setWeight(200, ' gr');
+                        } catch(Exception $e){
+                            echo 'Eccezione: ' . $e->getMessage();
+                        } ?></p>
                     <p class="card-text"><?php echo "<span>Scadenza: </span>"; echo $foodDog->getExpirationDate() ?></p>    
                 </div>
                 <div class="card-footer">
@@ -93,7 +97,7 @@ $kennelCat = new Kennel('Cuccia morbida', 'bed.jpg', 23, $categoryCat, '100x65x2
                 <p class="card-text"><?php echo "<span>Dimensioni: </span>"; echo $kennelDog->getSize() . ' cm' ?></p>    
                 </div>
                 <div class="card-footer">
-                <small class="text-muted"><?php echo "<span>Prezzo: </span>"; echo $foodDog->getPrice() . ' Euro' ?></small>
+                <small class="text-muted"><?php echo "<span>Prezzo: </span>"; echo $kennelDog->getPrice() . ' Euro' ?></small>
                 </div>
                 <div class="vz_icon_dog">
                     <img src="./img/<?php echo $kennelDog->category->getIcon() ?>" alt="">
@@ -134,7 +138,11 @@ $kennelCat = new Kennel('Cuccia morbida', 'bed.jpg', 23, $categoryCat, '100x65x2
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $foodDog->getTitle() ?></h5>
                     <p class="card-text"><?php echo "<span>Ingredienti: </span>"; foreach($foodDog->getIngredients() as $ingredient) echo $ingredient . ' ' ?></p>
-                    <p class="card-text"><?php echo "<span>Peso: </span>"; echo $foodDog->getWeight() ?></p>
+                    <p class="card-text"><?php echo "<span>Peso: </span>"; try {
+                            echo $foodDog->setWeight(200, ' gr');
+                        } catch(Exception $e){
+                            echo 'Eccezione: ' . $e->getMessage();
+                        } ?></p>
                     <p class="card-text"><?php echo "<span>Scadenza: </span>"; echo $foodDog->getExpirationDate() ?></p>    
                 </div>
                 <div class="card-footer">

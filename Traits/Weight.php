@@ -10,9 +10,10 @@ trait Weight{
         if($weight > 0){
             $this->weight = $weight . $unit;
         }else{
-            $this->weight = null;
+            // $this->weight = null;
+            throw new Exception('Il peso non è disponibile');
         }
-        return $this;
+        return $this->weight;
     }
 }
 ?>
