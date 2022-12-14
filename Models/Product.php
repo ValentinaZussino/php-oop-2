@@ -1,6 +1,8 @@
 <?php
 include_once __DIR__ . '/Category.php';
+require_once __DIR__ . '/../Traits/Weight.php';
  class Product {
+    use Weight;
     protected string $title;
     protected string $image;
     protected float $price;

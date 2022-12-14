@@ -12,8 +12,10 @@ $categoryCat = new Category('gatto', 'cat.png');
 
 // $product = new Product('Scatoletta', 'dog.jpg', 2.85, $categoryDog);
 
-$foodDog = new Food('Scatoletta Pedigree', 'scatoletta.jpg', 2.85, $categoryDog, 200, ['manzo', 'carote', 'patate'], '2023/12/20');
-$foodCat = new Food('Natural Trainer Secco', 'catfood.jpg', 2.99, $categoryCat, 300, ['anatra', 'ananas', 'mirtillo'], '2025/8/20');
+$foodDog = new Food('Scatoletta Pedigree', 'scatoletta.jpg', 2.85, $categoryDog, ['manzo', 'carote', 'patate'], '2023/12/20');
+$foodDog->setWeight(200, ' gr');
+$foodCat = new Food('Natural Trainer Secco', 'catfood.jpg', 2.99, $categoryCat, ['anatra', 'ananas', 'mirtillo'], '2025/8/20');
+$foodCat->setWeight(300, ' gr');
 
 $gameDog = new Game('Pallina', 'ball.jpg', 5.50, $categoryDog, '2x5.2', ['gomma']);
 $gameDog2 = new Game('Gioco strategico', 'doggame2.jpg', 5.92, $categoryDog, '29', ['plastica']);
@@ -44,7 +46,7 @@ $kennelCat = new Kennel('Cuccia morbida', 'bed.jpg', 23, $categoryCat, '100x65x2
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $foodDog->getTitle() ?></h5>
                     <p class="card-text"><?php echo "<span>Ingredienti: </span>"; foreach($foodDog->getIngredients() as $ingredient) echo $ingredient . ' ' ?></p>
-                    <p class="card-text"><?php echo "<span>Peso: </span>"; echo $foodDog->getWeight() . ' gr' ?></p>
+                    <p class="card-text"><?php echo "<span>Peso: </span>"; echo $foodDog->getWeight() ?></p>
                     <p class="card-text"><?php echo "<span>Scadenza: </span>"; echo $foodDog->getExpirationDate() ?></p>    
                 </div>
                 <div class="card-footer">
@@ -73,7 +75,7 @@ $kennelCat = new Kennel('Cuccia morbida', 'bed.jpg', 23, $categoryCat, '100x65x2
                 <div class="card-body">
                 <h5 class="card-title"><?php echo $foodCat->getTitle() ?></h5>
                 <p class="card-text"><?php echo "<span>Ingredienti: </span>"; foreach($foodCat->getIngredients() as $ingredient) echo $ingredient . ' '  ?></p>
-                <p class="card-text"><?php echo "<span>Peso: </span>"; echo $foodCat->getWeight() . ' gr' ?></p>    
+                <p class="card-text"><?php echo "<span>Peso: </span>"; echo $foodCat->getWeight() ?></p>    
                 <p class="card-text"><?php echo "<span>Scadenza: </span>"; echo $foodCat->getExpirationDate() ?></p>    
                 </div>
                 <div class="card-footer">
@@ -132,7 +134,7 @@ $kennelCat = new Kennel('Cuccia morbida', 'bed.jpg', 23, $categoryCat, '100x65x2
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $foodDog->getTitle() ?></h5>
                     <p class="card-text"><?php echo "<span>Ingredienti: </span>"; foreach($foodDog->getIngredients() as $ingredient) echo $ingredient . ' ' ?></p>
-                    <p class="card-text"><?php echo "<span>Peso: </span>"; echo $foodDog->getWeight() . ' gr' ?></p>
+                    <p class="card-text"><?php echo "<span>Peso: </span>"; echo $foodDog->getWeight() ?></p>
                     <p class="card-text"><?php echo "<span>Scadenza: </span>"; echo $foodDog->getExpirationDate() ?></p>    
                 </div>
                 <div class="card-footer">

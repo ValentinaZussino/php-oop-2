@@ -2,29 +2,29 @@
 include_once __DIR__ . '/Product.php';
 
 class Food extends Product{
-    private mixed $weight;
+    // private mixed $weight;
     private array $ingredients;
     private string $expirationDate;
 
-    function __construct(string $_title, string $_image, float $_price, Category $_category, mixed $_weight, array $_ingredients, string $_expirationDate = 'yyyy-mm-dd'){
+    function __construct(string $_title, string $_image, float $_price, Category $_category, array $_ingredients, string $_expirationDate = 'yyyy-mm-dd'){
         parent::__construct($_title, $_image, $_price, $_category);
-        $this->setWeight($_weight);
+        // $this->setWeight($_weight);
         $this->setExpirationDate($_expirationDate);
         $this->setIngredients($_ingredients);
     }
-    public function getWeight()
-    {
-        return $this->weight;
-    }
-    public function setWeight($weight)
-    {
-        if($weight > 0){
-            $this->weight = $weight;
-        }else{
-            $this->weight = null;
-        }
-        return $this;
-    }
+    // public function getWeight()
+    // {
+    //     return $this->weight;
+    // }
+    // public function setWeight($weight)
+    // {
+    //     if($weight > 0){
+    //         $this->weight = $weight;
+    //     }else{
+    //         $this->weight = null;
+    //     }
+    //     return $this;
+    // }
     public function getExpirationDate()
     {
         return $this->expirationDate;
